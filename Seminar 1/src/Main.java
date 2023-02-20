@@ -3,7 +3,6 @@ import java.util.ArrayList;
 enum Category {
     Electronice,
     Electrocasnice
-
 }
 
 class NameTooShortException extends Exception {
@@ -24,15 +23,15 @@ public class Main {
         } catch (NameTooShortException e) {
             e.printStackTrace();
         }
+        
         Product p2 = null;
         try {
             p2 = new Product("Frigider", 207.95, Category.Electrocasnice, 1245, "");
         } catch (NameTooShortException e) {
             e.printStackTrace();
         }
-
+        
         Product p3 = new Product(p1);
-
         p3.setQty(5);
         p3.setProductName("Paine");
 
@@ -117,7 +116,6 @@ class Product
         this.name = name;
     }
 
-
     public boolean equals(Product p)
     {
         if(p.id != this.id)
@@ -136,6 +134,7 @@ class Product
     public int getQty() {
         return qty;
     }
+    
     public void setQty(int qty) {
         this.qty = qty;
     }
@@ -176,11 +175,11 @@ class Order
     {
         productList = new ArrayList<Product>();
     }
+    
     public void add(Product p)
     {
         if(productList.size() > 99)
             return;
-
         productList.add(p);
     }
 
